@@ -12,4 +12,5 @@ t/02.options.t
 t/03.cell_size.t
 t/04.columnize.t
 Makefile.PL
+META.json
 SIGNATURE    Added here by Module::Build
