@@ -4,7 +4,7 @@
       "Rocky Bernstein <rocky@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112150",
+   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112621",
    "license" : [
       "open_source"
    ],
@@ -22,6 +22,7 @@
       "runtime" : {
          "requires" : {
             "ExtUtils::PkgConfig" : "1.03",
+            "Module::Build" : "0.38",
             "Test::More" : 0,
             "version" : 0
          }

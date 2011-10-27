@@ -1,4 +1,3 @@
-#!/usr/bin/env perl
 #  Copyright (C) 2011 Rocky Bernstein <rockycpan.org>
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -30,11 +29,12 @@ my $builder = Module::Build->new(
     dist_version_from   => 'lib/Array/Columnize.pm',
     license             => 'gpl',
     needs_compiler      => 0,
-    release_status      => 'testing',
+    release_status      => 'stable',
     requires => {
 	'ExtUtils::PkgConfig'     => '1.03',
         'Test::More'              => 0,
         'version'                 => 0,
+	'Module::Build'           => 0.38
     },
     sign                => 1,
     );
