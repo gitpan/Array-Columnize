@@ -14,6 +14,11 @@
    },
    "name" : "Array-Columnize",
    "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.38"
+         }
+      },
       "configure" : {
          "requires" : {
             "Module::Build" : "0.38"
@@ -22,7 +27,6 @@
       "runtime" : {
          "requires" : {
             "ExtUtils::PkgConfig" : "1.03",
-            "Module::Build" : "0.38",
             "Test::More" : 0,
             "version" : 0
          }
@@ -31,7 +35,7 @@
    "provides" : {
       "Array::Columnize" : {
          "file" : "lib/Array/Columnize.pm",
-         "version" : "v0.3.6"
+         "version" : "v0.3.7"
       }
    },
    "release_status" : "stable",
@@ -40,5 +44,5 @@
          "http://opensource.org/licenses/gpl-license.php"
       ]
    },
-   "version" : "v0.3.6"
+   "version" : "v0.3.7"
 }
