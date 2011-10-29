@@ -30,7 +30,7 @@ my $builder = Module::Build->new(
     license             => 'gpl',
     needs_compiler      => 0,
     release_status      => 'stable',
-    build_requires => {
+    configure_requires => {
 	'Module::Build'           => 0.38
     },
     requires => {
@@ -38,7 +38,7 @@ my $builder = Module::Build->new(
         'Test::More'              => 0,
         'version'                 => 0,
     },
-    sign                => 1,
+    sign                => ($ENV{PERL_MB_NOSIGN} ? 0 : 1),
     );
 
 $builder->create_build_script();
