@@ -84,6 +84,9 @@ sub columnize($;$) {
 	    }
 	    last if ($totwidth <= $opts{displaywidth});
 	}
+	$ncols = 1 if $ncols < 1;
+	$nrows = scalar(@l) if $ncols == 1;
+
 	# The smallest number of rows computed and the max widths for
 	# each column has been obtained.  Now we just have to format
 	# each of the rows.
@@ -103,9 +106,11 @@ sub columnize($;$) {
 	    pop(@texts) while (scalar(@texts) > 0 && $texts[-1] eq '');
 	    if (scalar(@texts) > 0) {
 		for (my $col=0; $col < scalar(@texts); $col++) {
-		    my $fmt = sprintf("%%%s$colwidths[$col]s",
-				      ($opts{ljust} ? '-': '')); 
-		    $texts[$col] = sprintf($fmt, $texts[$col]);
+		    unless ($ncols == 1 && $opts{ljust}) {
+			my $fmt = sprintf("%%%s$colwidths[$col]s",
+					  ($opts{ljust} ? '-': '')); 
+			$texts[$col] = sprintf($fmt, $texts[$col]);
+		    }
 		}
 		push(@s, sprintf("%s%s", $opts{lineprefix}, 
 				 join($opts{colsep}, @texts)));
@@ -119,7 +124,7 @@ sub columnize($;$) {
 	};
     	# Try every column count from size downwards.
     	my ($totwidth, $i, $rounded_size) = (0, 0, 0);
-        for (my $_ncols=scalar(@l); $_ncols > 0; $_ncols--) {
+        for (my $_ncols=scalar(@l); $_ncols >= 1; $_ncols--) {
 	    $ncols = $_ncols;
 	    # Try every row count from 1 upwards
 	    my $min_rows = POSIX::ceil((scalar(@l)+$ncols-1) / $ncols);
@@ -155,6 +160,8 @@ sub columnize($;$) {
 	    }
 	    last if ($totwidth <= $opts{displaywidth} && $i >= $rounded_size-1);
 	}
+	$nrows = scalar(@l) if $ncols == 1;
+
 	# The smallest number of rows computed and the
 	# max widths for each column has been obtained.
 	# Now we just have to format each of the
@@ -175,9 +182,11 @@ sub columnize($;$) {
 		push @texts, $x;
 	    }
 	    for (my $col=0; $col < scalar(@texts); $col++) {
-		my $fmt = sprintf("%%%s$colwidths[$col]s",
-				  ($opts{ljust} ? '-': '')); 
-		$texts[$col] = sprintf($fmt, $texts[$col]);
+		unless ($ncols == 1 && $opts{ljust}) {
+		    my $fmt = sprintf("%%%s$colwidths[$col]s",
+				      ($opts{ljust} ? '-': '')); 
+		    $texts[$col] = sprintf($fmt, $texts[$col]);
+		}
 	    }
 	    push(@s, sprintf("%s%s", $opts{lineprefix}, 
 
@@ -190,7 +199,7 @@ sub columnize($;$) {
 
 
 # Demo it
-if (__FILE__ eq $0) {
+unless (caller) {
 
     my @ary = qw(bibrons golden madascar leopard mourning suras tokay);
     print columnize(\@ary, {displaywidth => 18});
