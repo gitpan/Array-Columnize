@@ -16,13 +16,12 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "ExtUtils::PkgConfig" : "1.03",
             "Test::More" : 0
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.38"
+            "Module::Build" : 0
          }
       },
       "runtime" : {
@@ -35,7 +34,7 @@
    "provides" : {
       "Array::Columnize" : {
          "file" : "lib/Array/Columnize.pm",
-         "version" : "v0.4.1"
+         "version" : "v0.4.2"
       }
    },
    "release_status" : "stable",
@@ -44,5 +43,5 @@
          "http://opensource.org/licenses/gpl-license.php"
       ]
    },
-   "version" : "v0.4.1"
+   "version" : "v0.4.2"
 }
