@@ -19,7 +19,7 @@
 #
 # == License 
 #
-# Columnize is copyright (C) 2011 Rocky Bernstein <rocky@cpan.org>
+# Columnize is copyright (C) 2011-2012 Rocky Bernstein <rocky@cpan.org>
 #
 # All rights reserved.  You can redistribute and/or modify it under
 # the same terms as Perl.
@@ -37,15 +37,21 @@ use vars qw(@ISA @EXPORT @EXPORT_OK $VERSION);
 @ISA = qw/ Exporter /;
 @EXPORT = qw(columnize);
 
-use version; $VERSION = '0.4.2';
+use version; $VERSION = '1.00';  # Add _01 when we want testing.
 
-if (__FILE__ eq $0 ) {
+unless (caller) {
+    # Demo code
     print "This is version: $Array::Columnize::VERSION\n";
     print columnize([1,2,3,4], {displaywidth=>4}), "\n";
+    my $data_ref = [80..120];
+    print columnize($data_ref, {ljust => 0}) ;
+    print columnize($data_ref, {ljust => 0, arrange_vertical => 0}) ;
+    my @ary = qw(bibrons golden madascar leopard mourning suras tokay);
+    print columnize(\@ary, {displaywidth => 18});
 }
 
-1;
-
+'Just another Perl module';
+__END__
 =encoding utf8
 
 =head1 NAME
@@ -78,7 +84,7 @@ produces:
 =head2 With numeric data
 
     my $data_ref = [80..120];
-    print columnize($data_ref, {ljust = 0}) ;
+    print columnize($data_ref, {ljust => 0}) ;
 
 produces:
 
@@ -88,7 +94,7 @@ produces:
 
 while:
 
-    print columnize($data_ref, {ljust = 0, arrange_vertical = 0}) ;
+    print columnize($data_ref, {ljust => 0, arrange_vertical => 0}) ;
 
 produces:
 
@@ -149,9 +155,9 @@ L<http://annocpan.org/dist/Array-Columnize>
 
 L<http://cpanratings.perl.org/d/Array-Columnize>
 
-=item * RT: CPAN's request tracker
+=item * Github request tracker
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Array-Columnize>
+L<https://github.com/rocky/Perl-Array-Columnize/issues>
 
 =item * Search CPAN
 
@@ -161,7 +167,7 @@ L<http://search.cpan.org/dist/Array-Columnize>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright (c) 2011 Rocky Bernstein.
+Copyright (c) 2011, 2012 Rocky Bernstein.
 
 =head2 LICENSE
 
@@ -169,5 +175,4 @@ Same terms as Perl.
 
 =cut
 
-1;
 

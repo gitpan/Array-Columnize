@@ -4,7 +4,7 @@
       "Rocky Bernstein <rocky@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112150",
+   "generated_by" : "Module::Build version 0.4, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "open_source"
    ],
@@ -16,32 +16,37 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Test::More" : 0
+            "Test::More" : "0.81"
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : 0
+            "Module::Build" : "0"
          }
       },
       "runtime" : {
          "requires" : {
-            "rlib" : "0.02",
-            "version" : 0
+            "version" : "0"
          }
       }
    },
    "provides" : {
       "Array::Columnize" : {
          "file" : "lib/Array/Columnize.pm",
-         "version" : "v0.4.2"
+         "version" : "1.00"
       }
    },
    "release_status" : "stable",
    "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/rocky/Perl-Array-Columnize/issues"
+      },
       "license" : [
-         "http://opensource.org/licenses/gpl-license.php"
-      ]
+         "http://www.gnu.org/licenses/old-licenses/gpl-1.0.txt"
+      ],
+      "repository" : {
+         "url" : "http://github.com/rocky/Perl-Array-Columnize"
+      }
    },
-   "version" : "v0.4.2"
+   "version" : "1.00"
 }
