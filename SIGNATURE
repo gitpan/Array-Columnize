@@ -14,27 +14,29 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 b79c2b3b42b5287c9efd99829d2358af522a705c Build.PL
-SHA1 67ac1a25fc9708942487ac1ef7e15901365351e9 ChangeLog
-SHA1 426767d9a92a2984d64698b3a6bf7586d3fadc03 Changes
+SHA1 14b148ebf395690de7751ad0bdf9f247f95dcfe8 Build.PL
+SHA1 2f94aaec2c2bb1abf62c640aa7c1aede8bc26144 ChangeLog
+SHA1 e6d7ff264486aad0ce4c146c29bd454f454aeefa Changes
 SHA1 067a2e4b5e1f36609f5aa66c5c12179cba00c36b GNUmakefile
-SHA1 e77eab7fce7625a759c58ac30fd67c58e9a17344 MANIFEST
-SHA1 13977035a030ba35864af380385405d9817b94eb META.json
-SHA1 7c250cc68eb41d1bd0c72c054c3d5bcc909cb6f6 META.yml
+SHA1 f1d1732c3159f52d3cc2a0f31f4358bceeb07f72 MANIFEST
+SHA1 1a5a29acda9232accedb059cb45c2aa82a4cee91 META.json
+SHA1 5bd7d4c01db314ba2aac7161b72f7fc94e2ad6bc META.yml
 SHA1 9fa7916b771b6b22d684acab640dcea37b5e0624 Makefile.PL
-SHA1 10bf66a0057fcaed119adc2b117e85c2bf14969f README.md
-SHA1 548b21ba9e84242a8e33dd9eebaa11856b802699 lib/Array/Columnize.pm
-SHA1 e2c9f6fd0211291036773c97bd041decabdc7204 lib/Array/Columnize/columnize.pm
-SHA1 e4301cdac3e196e7de74b6821c811296112787b7 lib/Array/Columnize/options.pm
+SHA1 44a28dce9650dfdef6924186be08396df162f5b9 README.md
+SHA1 8647b636e5a29e0a83d49c37b36726a87214c583 eg/example.pl
+SHA1 68d5af5c6a10e84da0d928b9bb49941ea48406f0 lib/Array/Columnize.pm
+SHA1 5cea8bb8910d2b2df7a0fcc4909f095a6f783e54 lib/Array/Columnize/columnize.pm
+SHA1 bb00acf013b5cff5f0c9877130a36d0801bb4f1f lib/Array/Columnize/options.pm
+SHA1 0028fef9be7783d9eba29ae4d3940cc99cc8d14e t/00.test-pod.t
 SHA1 5a05c2ec9eea8a884c93e798e4e65b8e26b91c93 t/01.version.t
-SHA1 49d9519f288f8fb340bd3fc40f0094ad9101ddb8 t/02.options.t
+SHA1 47fb2c3cb443da3e17f5ee8c804f3fe93eacfef5 t/02.options.t
 SHA1 589b6496eb7e3e3931db8e5f6aca286b3135eb46 t/03.cell_size.t
-SHA1 c40b95b06c522b090e2611ce1166e1133cfff8b7 t/04.columnize.t
-SHA1 c0c5813e17ae452d8a23c815ce7149867733b779 t/05.longcol.t
+SHA1 7fb04edf48f64e54702b5faa8af81c58f10ccc8a t/04.columnize.t
+SHA1 ad3f83aadde81fdb6eacbbe19d28b8ecce10d421 t/05.longcol.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.11 (GNU/Linux)
 
-iEYEARECAAYFAlAoivUACgkQGo3lAIJ17CEPDACeNzPn4pEXvm3Fvpw+AYJ11PuH
-pCEAoJG+/LoBub7Fy2/W8KvJsgbXylal
-=DCsE
+iEYEARECAAYFAlAptToACgkQGo3lAIJ17CGLZACbB1hOzz7ve+T9mZyhvfDMmUT/
+lisAnRq7zrtiv6Lgx04akHOuVyZrNg9B
+=xtt4
 -----END PGP SIGNATURE-----
