@@ -30,6 +30,7 @@ my $builder = Module::Build->new(
     license             => 'gpl',
     needs_compiler      => 0,
     release_status      => 'stable', # or 'testing'
+    # release_status      => 'testing', # or 'stable'
 
     meta_merge => {
 	resources => {

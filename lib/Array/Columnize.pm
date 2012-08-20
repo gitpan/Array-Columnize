@@ -38,7 +38,7 @@ use vars qw(@ISA @EXPORT @EXPORT_OK $VERSION);
 @EXPORT = qw(columnize);
 
 # Add or remove  _01 when we want testing.
-use version; $VERSION = '1.01';  
+use version; $VERSION = '1.02';  
 
 unless (caller) {
     # Demo code
@@ -62,7 +62,7 @@ Array::Columnize - arrange list data in columns.
 =head1 SYNOPSIS
 
     use Array::Columnize;
-    print columnize($array_ref, $optional_hash_or_hash_ref), "\n";
+    print columnize($array_ref, $optional_hash_or_hash_ref);
 
 =head1 DESCRIPTION
 
@@ -75,7 +75,7 @@ aligned.
 
 =head2 Simple data example 
 
-    print columnize(['a','b','c','d'], {displaywidth=>4}), "\n";
+    print columnize(['a','b','c','d'], {displaywidth=>4});
 
 produces:
 
@@ -106,9 +106,10 @@ produces:
     120
 
 And 
+
     my $array_ref = [1..30];
     print columnize($array_ref,
-		    {arrange_array => 1, ljust =>0, displaywidth => 70});
+		    {arrange_array => 1, ljust => 0, displaywidth => 70});
 
 produces:
 
@@ -127,7 +128,7 @@ produces:
     madascar  tokay   
     leopard 
 
-    puts columnize \@ary, {displaywidth => 18, colsep => ' | '};
+    print columnize \@ary, {displaywidth => 18, colsep => ' | '};
 
 produces:
 
@@ -142,11 +143,8 @@ Rocky Bernstein, C<< rocky@cpan.org >>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to
-C<bug-array-columnize at rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Array-Columnize>.
-I will be notified, and then you'll automatically be notified of progress on
-your bug as I make changes.
+Please report any bugs or feature requests through the web interface
+at L<https://github.com/rocky/Perl-Array-Columnize/issues>.
 
 =head1 SUPPORT
 
