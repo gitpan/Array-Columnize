@@ -1,25 +1,14 @@
 # Format an Array as an Array of String aligned in columns.
 #
 # == Summary
-# Display a list of strings as a compact set of columns.
+# Format a list into a single string with embedded newlines.
+# On printing the string the columns are aligned.
 #
-#   For example, for a line width of 4 characters (arranged vertically):
-#        ['1', '2,', '3', '4'] => '1  3\n2  4\n'
-#   
-#    or arranged horizontally:
-#        ['1', '2,', '3', '4'] => '1  2\n3  4\n'
-#        
-# Each column is only as wide as necessary.  By default, columns are
-# separated by two spaces. Options are avalable for setting
-# * the display width
-# * the column separator
-# * the line prefix
-# * whether to ignore terminal codes in text size calculation
-# * whether to left justify text instead of right justify
+#  See documentation for Columnize.columnize below.
 #
-# == License 
+# == License
 #
-# Columnize is copyright (C) 2011-2012 Rocky Bernstein <rocky@cpan.org>
+# Columnize is copyright (C) 2011-2013 Rocky Bernstein <rocky@cpan.org>
 #
 # All rights reserved.  You can redistribute and/or modify it under
 # the same terms as Perl.
@@ -38,7 +27,7 @@ use vars qw(@ISA @EXPORT @EXPORT_OK $VERSION);
 @EXPORT = qw(columnize);
 
 # Add or remove  _01 when we want testing.
-use version; $VERSION = '1.02';  
+use version; $VERSION = '1.03';
 
 unless (caller) {
     # Demo code
@@ -71,9 +60,43 @@ arranged and aligned in columns. Some examples include listing methods of
 an object, listing debugger commands, or showing a numeric array with data
 aligned.
 
+=head2 OPTIONS
+
+=over
+
+=item displaywidth
+
+the line display width used in calculating how to align columns
+
+=item colfmt
+
+What format specifier to use in sprintf to stringify list entries. The
+default is none.
+
+=item colsep
+
+String to insert between columns. The default is two spaces, oe space
+just wasn't enough.
+
+the column separator
+
+=item lineprefix
+
+=item linesuffix
+
+=item termadjust
+
+=item arrange_array
+
+=item ladjust
+
+whether to left justify text instead of right justify. The default is true
+
+=back
+
 =head1 EXAMPLES
 
-=head2 Simple data example 
+=head2 Simple data example
 
     print columnize(['a','b','c','d'], {displaywidth=>4});
 
@@ -105,7 +128,7 @@ produces:
     110  111  112  113  114  115  116  117  118  119
     120
 
-And 
+And
 
     my $array_ref = [1..30];
     print columnize($array_ref,
@@ -113,7 +136,7 @@ And
 
 produces:
 
-   ( 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15
+   ( 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
     16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30)
 
 =head2 With String data
@@ -121,21 +144,21 @@ produces:
     @ary = qw(bibrons golden madascar leopard mourning suras tokay);
     print columnize(\@ary, {displaywidth => 18});
 
-produces: 
+produces:
 
     bibrons   mourning
-    golden    suras   
-    madascar  tokay   
-    leopard 
+    golden    suras
+    madascar  tokay
+    leopard
 
     print columnize \@ary, {displaywidth => 18, colsep => ' | '};
 
 produces:
 
     bibrons  | mourning
-    golden   | suras   
-    madascar | tokay   
-    leopard 
+    golden   | suras
+    madascar | tokay
+    leopard
 
 =head1 AUTHOR
 
@@ -183,5 +206,3 @@ Copyright (c) 2011, 2012 Rocky Bernstein.
 Same terms as Perl.
 
 =cut
-
-
