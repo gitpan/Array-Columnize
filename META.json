@@ -22,7 +22,8 @@
       "configure" : {
          "requires" : {
             "Module::Build" : "0",
-            "perl" : "5.006001"
+            "perl" : "5.006001",
+            "rlib" : "0.02"
          }
       },
       "runtime" : {
@@ -34,7 +35,7 @@
    "provides" : {
       "Array::Columnize" : {
          "file" : "lib/Array/Columnize.pm",
-         "version" : "1.03"
+         "version" : "1.04"
       }
    },
    "release_status" : "stable",
@@ -49,5 +50,5 @@
          "url" : "http://github.com/rocky/Perl-Array-Columnize"
       }
    },
-   "version" : "1.03"
+   "version" : "1.04"
 }
